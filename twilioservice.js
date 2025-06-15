@@ -7,6 +7,10 @@ app.use(express.json());
 
 console.log('I am in server');
 
+app.get('/whatsapp',(req,res)=>{
+  return res.json({message:"app is working fine"})
+})
+
 // Add webhook route
 app.post("/webhook/incoming", (req, res) => {
   console.log("Message received:");
