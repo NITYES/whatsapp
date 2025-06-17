@@ -21,7 +21,7 @@ function sendMessageToUser(msg, to) {
   client.messages
     .create({
       body: msg,
-      to: `whatsapp:${to}`,
+      to: to,
       from: 'whatsapp:+14155238886' // Twilio WhatsApp number
     })
     .then((message) => console.log("Message SID:", message.sid))
@@ -82,6 +82,6 @@ app.post('/message', (req, res) => {
 
 app.listen(3000, () => {
   console.log("App listening on port 3000");
-  sendMessageToUser('mESSAGE SENT WORKING','+9779844253789')
+  sendMessageToUser('mESSAGE SENT WORKING','whatsapp:+9779844253789')
 });
 
